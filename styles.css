@@ -1,1 +1,79 @@
 /*Maak hier jouw CSS!*/
+
+body {
+    font-family: "Lucida Grande", sans-serif;
+    background-color: antiquewhite;
+    color: white;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 190px 100px auto 50px;
+    column-gap: 16px;
+    row-gap: 16px;
+    grid-template-areas: "header c c"
+                         "b c c"
+                         "b e d"
+                         "b e ."
+                         "footer footer footer";
+}
+
+.grid-container > * {
+    background-color: brown;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid hsl(0,60%,31%);
+}
+
+header {
+    display:flex ;
+    row-gap: 16px;
+    grid-area: header;
+}
+
+.section-b  {
+    display: flex;
+    grid-area: b;
+    padding: 10px;
+}
+
+.section-c  {
+    display: flex;
+    grid-area: c;
+    padding: 10px;
+}
+
+.section-d  {
+    display: flex;
+    grid-area: d;
+    padding: 10px;
+}
+
+.section-e  {
+    display: flex;
+    grid-area: e;
+    padding: 10px;
+}
+
+footer {
+    display: flex;
+    grid-area: footer;
+    padding: 10px;
+}
+
+/* hier komt de Mobile versie*/
+
+@media screen and (max-width: 576px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+        row-gap: 16px;
+        column-gap: 16px;
+        grid-template-areas:
+        "header" "b" "c" "d" "e" "." "footer";
+
+    }
+}
+
+
